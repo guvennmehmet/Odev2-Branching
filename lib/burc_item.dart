@@ -1,3 +1,4 @@
+import 'package:burc_rehberi/burc_detay.dart';
 import 'package:flutter/material.dart';
 import 'model/burc.dart';
 
@@ -8,7 +9,9 @@ class BurcItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var myTextStyle = Theme.of(context).textTheme;
+    var myTextStyle = Theme
+        .of(context)
+        .textTheme;
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Card(
@@ -16,6 +19,12 @@ class BurcItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListTile(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) =>
+                      BurcDetay(secilenBurc: listelenenBurc))
+              );
+            },
             leading: Image.asset(
               "images/" + listelenenBurc.burcKucukResim,
             ),
