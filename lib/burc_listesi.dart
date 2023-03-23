@@ -1,3 +1,4 @@
+import 'package:burc_rehberi/burc_item.dart';
 import 'package:flutter/material.dart';
 
 import 'data/strings.dart';
@@ -18,7 +19,12 @@ class BurcListesi extends StatelessWidget {
         title: Text('Burçlar Listesi'),
       ),
       body: Center(
-        child: Text('Burç Listesi buraya gelecek'),
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return BurcItem(listelenenBurc: tumBurclar[index]);
+          },
+          itemCount: tumBurclar.length,
+        ),
       ),
     );
   }
