@@ -9,9 +9,7 @@ class BurcItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var myTextStyle = Theme
-        .of(context)
-        .textTheme;
+    var myTextStyle = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Card(
@@ -20,10 +18,8 @@ class BurcItem extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ListTile(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) =>
-                      BurcDetay(secilenBurc: listelenenBurc))
-              );
+              Navigator.pushNamed(context, '/burcDetay',
+                  arguments: listelenenBurc);
             },
             leading: Image.asset(
               "images/" + listelenenBurc.burcKucukResim,

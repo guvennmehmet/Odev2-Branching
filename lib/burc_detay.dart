@@ -18,7 +18,7 @@ class _BurcDetayState extends State<BurcDetay> {
   @override
   void initState() {
     super.initState();
-    appBarRenginiBul();
+    WidgetsBinding.instance!.addPostFrameCallback((_) => appBarRenginiBul());
   }
 
   @override
